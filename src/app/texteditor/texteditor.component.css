@@ -1,0 +1,88 @@
+.editor-container{
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0px 3px 8px 1px rgba(153,153,153,1);
+    -moz-box-shadow: 0px 3px 8px 1px rgba(153,153,153,1);
+    box-shadow: 0px 3px 8px 1px rgba(153,153,153,1);
+    size: 7in 9.25in;
+    margin: 22mm 16mm 24mm 16mm;
+}
+
+/* @page {
+    size: 7in 9.25in;
+    margin: 27mm 16mm 27mm 16mm;
+} */
+
+.editor{
+    min-height: 100vh;
+}
+
+::ng-deep.ql-toolbar{
+    position: fixed;
+    top: 60px;
+    left: 0;
+    border: none !important;
+    z-index: 100;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
+::ng-deep.ql-container{
+    margin-top: 103px;
+}
+
+app-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    z-index: 100;
+}
+
+@media (max-width: 768px) { 
+    .editor-container{
+        margin: 22mm 2mm 24mm 2mm;
+    }
+}
+
+/* Responsive media queries  */
+@media (max-width: 500px) { 
+    ::ng-deep.ql-container{
+        margin-top: 183px;
+    }
+}
+
+@media (min-width: 500px) { 
+    ::ng-deep.ql-container{
+        margin-top: 183px;
+    }
+}
+
+@media (min-width: 576px) { 
+    ::ng-deep.ql-container{
+        margin-top: 156px;
+    }
+}
+
+@media (min-width: 768px) { 
+    ::ng-deep.ql-container{
+        margin-top: 130px;
+    }
+}
+
+@media (min-width: 992px) { 
+    ::ng-deep.ql-container{
+        margin-top: 130px;
+    }
+}
+
+@media (min-width: 1200px) { 
+    ::ng-deep.ql-container{
+        margin-top: 103px;
+    }
+}
+
+@media (min-width: 1400px) { 
+    ::ng-deep.ql-container{
+        margin-top: 103px;
+    }
+}

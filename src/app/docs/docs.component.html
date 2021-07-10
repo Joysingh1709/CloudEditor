@@ -1,0 +1,65 @@
+<app-nav></app-nav>
+
+<div class="my-docs">Your Documents</div>
+<div class="main-container">
+    <div class="pages-container" *ngIf="!docs">
+        <div class="page-container">
+            <skeleton-load Cwidth="200" Cheight="280" content="true"></skeleton-load>
+        </div>
+        <div class="page-container">
+            <skeleton-load Cwidth="200" Cheight="280" content="true"></skeleton-load>
+        </div>
+        <div class="page-container">
+            <skeleton-load Cwidth="200" Cheight="280" content="true"></skeleton-load>
+        </div>
+        <div class="page-container">
+            <skeleton-load Cwidth="200" Cheight="280" content="true"></skeleton-load>
+        </div>
+        <div class="page-container">
+            <skeleton-load Cwidth="200" Cheight="280" content="true"></skeleton-load>
+        </div>
+    </div>
+    <div class="pages-container" *ngIf="docs">
+        <div class="page-container">
+            <div class="empty-page" mat-ripple (click)="createNewDoc()">
+                <fa-icon class="file-icon" [icon]="faPlus"></fa-icon>
+            </div>
+            <div class="doc-name">
+                Create new document
+            </div>
+        </div>
+        <div *ngFor="let d of docs; let i = index" class="page-container" (click)="onDocSelect(i)">
+            <div class="page">
+                <quill-view class="quill-view" theme="snow" [content]="d.content"></quill-view>
+            </div>
+            <div class="doc-name">
+                {{d.docName}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-docs">Shared</div>
+<div class="main-container">
+    <div class="pages-container" *ngIf="!sharedDocData">
+        <div class="page-container">
+            <skeleton-load Cwidth="200" Cheight="280" content="true"></skeleton-load>
+        </div>
+        <div class="page-container">
+            <skeleton-load Cwidth="200" Cheight="280" content="true"></skeleton-load>
+        </div>
+        <div class="page-container">
+            <skeleton-load Cwidth="200" Cheight="280" content="true"></skeleton-load>
+        </div>
+    </div>
+    <div class="pages-container" *ngIf="sharedDocData">
+        <div *ngFor="let d of sharedDocData; let i = index" class="page-container" (click)="onDharedDocSelect(i)">
+            <div class="page">
+                <quill-view class="quill-view" theme="snow" [content]="d.content"></quill-view>
+            </div>
+            <div class="doc-name">
+                {{d.docName}}
+            </div>
+        </div>
+    </div>
+</div>

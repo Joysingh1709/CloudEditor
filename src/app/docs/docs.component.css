@@ -1,0 +1,107 @@
+.main-container{
+    background-color: rgb(238, 238, 238);
+    padding: 0 40px;
+}
+
+.pages-container{
+    overflow-x: auto;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.my-docs{
+    padding: 20px 20px;
+    background-color: rgba(255, 255, 255, 0.048);
+    font-size: 24px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.page-container::-webkit-scrollbar{
+    display: none;
+}
+
+.pages-container::-webkit-scrollbar{
+    display: none;
+}
+
+.page-container{
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.doc-name{
+    margin-top: 14px;
+    font-size: 86%;
+    color: rgb(80, 80, 80);
+    text-align: center;
+}
+
+.page{
+    box-shadow: 0px 2px 8px -6px rgba(0,0,0,0.84);
+    -webkit-box-shadow: 0px 2px 8px -6px rgba(0,0,0,0.84);
+    -moz-box-shadow: 0px 2px 8px -6px rgba(0,0,0,0.84);
+    width: 200px;
+    height: 280px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+::ng-deep.ql-container .ql-editor::-webkit-scrollbar {
+    position            : relative;
+    background          : rgb(255, 255, 255);
+    width               : 8px;
+    border-radius       : 4px;
+    top                 : 0;
+    z-index             : 2;
+    cursor              : pointer;
+    opacity: 1;
+    transition: opacity 0.25s linear;
+}
+
+::ng-deep.ql-container .ql-editor::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.048);
+    border-radius: 10px;
+}
+
+.empty-page{
+    box-shadow: 0px 2px 8px -6px rgba(0,0,0,0.84);
+    -webkit-box-shadow: 0px 2px 8px -6px rgba(0,0,0,0.84);
+    -moz-box-shadow: 0px 2px 8px -6px rgba(0,0,0,0.84);
+    width: 200px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.file-icon{
+    font-size: 20px;
+    color: rgba(46, 46, 46, 0.74);
+}
+
+
+.loading-page{
+    background-color: #b8b8b8;
+}
+
+.loading-page{
+    content: '';
+    transform: translateX(-100%);
+    background: linear-gradient(to left , transparent, rgb(255, 255, 255, 0.5)), transparent;
+    animation: loading 1s infinite;
+}
+
+@keyframes loading {
+    100% {
+        transform: translateX(100%);
+    }
+}

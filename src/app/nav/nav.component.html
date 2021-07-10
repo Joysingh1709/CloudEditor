@@ -1,0 +1,40 @@
+<div class="nav-container">
+    <div class="doc-name">
+        <div class="logo-name">
+            <a class="name" routerLink="/login">Cloud Editor</a>
+        </div>
+        <fa-icon *ngIf="docName" class="file-icon" [icon]="faFileAlt"></fa-icon>
+        <div *ngIf="docName" class="name">{{docName}}</div>
+
+        <div *ngIf="docName" class="ver-line"></div>
+
+        <div class="add">
+            <fa-icon *ngIf="!docName" class="file-icon" [icon]="faFileMedical"></fa-icon>
+            <!-- <div>Create new document</div> -->
+        </div>
+        <fa-icon *ngIf="docName" class="file-icon-save" [icon]="faSave"></fa-icon>
+    </div>
+
+    <div class="center">
+        <div class="search-box">
+        </div>
+    </div>
+
+    <div class="members-container">
+        <div matRipple (click)="signUp()" *ngIf="!user" class="google-btn">
+            <fa-icon class="g-icon" [icon]="faGoogle"></fa-icon>
+            <div>Sign up with Google</div>
+        </div>
+        <button (click)="signOut()" *ngIf="user">Sign Out</button>
+
+        <button (click)="shareDoc()" *ngIf="share" mat-button class="share-btn">
+            <fa-icon [icon]="faShareAlt"></fa-icon>
+            Share
+        </button>
+
+        <div class="mem-box" *ngIf="user">
+            <div class="mem-name">{{user.name}}</div>
+            <img class="mem-avatar" src="{{user.photoUrl}}" alt="">
+        </div>
+    </div>
+</div>

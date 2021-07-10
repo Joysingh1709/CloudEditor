@@ -1,0 +1,52 @@
+<app-nav></app-nav>
+
+<section id="main-sec1">
+    <div class="content-1" appFade appParalax [ratio]="-0.2">
+        <div class="creative-topic">
+            <div class="content-topic igx-typography">Create persuasive Kim documents</div>
+        </div>
+
+        <div class="whole-all">
+            <div class="whol-1">
+                <h2>Personal</h2>
+                <ng-lottie [options]="options" width="100px" height="100px"
+                    (animationCreated)="animationCreated($event)"></ng-lottie>
+                <p class="mat-typography">With Cloud Editor, you can write, edit, and collaborate wherever you are. For
+                    Free.</p>
+                <button mat-button routerLink="/docs" class="whole-btn">Go to Docs</button>
+            </div>
+            <div class="whol-2">
+                <h2>Bussiness</h2>
+                <ng-lottie [options]="options1" width="100px" height="100px"
+                    (animationCreated)="animationCreated($event)"></ng-lottie>
+                <p>The Cloud editor Docs has security and control for teams.</p>
+                <button mat-button routerLink="/docs" class="whole-btn">Learn More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-2" appParalax [ratio]="content_2_ratio">
+        <div class="flex-content">
+            <div class="flex-box">
+                <div class="laptop-image">
+                </div>
+                <div class="abs-laptop">
+                    <div class="dynamic-img">
+                        <div class="frame-screen">
+                            <quill-editor></quill-editor>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-text">
+                    <h2>More than letters and words</h2>
+                    <P>Cloud Editor Docs brings your documents to life with smart
+                        editing and styling tools to help youeasily
+                        format text and paragraphs. Choose from hundreds of fonts,
+                        add links, images, and drawings. All for free.</P>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-image" appParalax [ratio]="0.2"></div>

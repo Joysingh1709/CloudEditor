@@ -1,0 +1,39 @@
+<div mat-dialog-title>Share document</div>
+<mat-dialog-content class="mat-typography">
+
+    <mat-form-field class="example-chip-list">
+        <mat-label style="font-size: 1rem;">Add member's email to share</mat-label>
+        <mat-chip-list #chipList aria-label="Add member's email to share">
+            <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable" [removable]="removable"
+                (removed)="remove(fruit)">
+                {{fruit.name}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Add email..." [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+    </mat-form-field>
+
+    <div style="margin: 20px 0;">OR share using shareable link</div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Member can ?</mat-label>
+        <mat-select [formControl]="toppings">
+            <mat-option *ngFor="let food of toppingList" [value]="food">
+                {{food}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-dialog-content>
+<div>Anyone with the link can <strong>{{toppings.value}}</strong> this document.</div>
+<fa-icon #tooltip="matTooltip" *ngIf="link" (mouseenter)="this.tooltipMsg = 'Copy link'" [matTooltip]="tooltipMsg"
+    matTooltipPosition="above" [cdkCopyToClipboard]="link" (click)="onToolTipClick()" class="copy-icon" [icon]="faCopy">
+</fa-icon>
+<pre *ngIf="showLink">{{link}}</pre>
+<button mat-button class="link-btn" (click)="createLink()">Create link</button>
+<igx-circular-bar style="vertical-align: middle; margin: 0 10px;" *ngIf="loading" [animate]="false" [indeterminate]="true" [textVisibility]="false"></igx-circular-bar>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Done</button>
+</mat-dialog-actions>

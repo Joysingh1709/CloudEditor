@@ -1,0 +1,31 @@
+.example-chip-list {
+    width: 100%;
+}
+
+pre {
+    font-size: medium;
+    padding: 20px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.copy-icon{
+    cursor: pointer;
+    position: relative;
+    float: right;
+    right: 22px;
+    top: 2px;
+    font-size: 18px;
+    color: rgba(104, 104, 104, 0.877);
+}
+
+.link-btn{
+    margin-top: 10px;
+    background-color: #4884ed;
+    color: #fff;
+}

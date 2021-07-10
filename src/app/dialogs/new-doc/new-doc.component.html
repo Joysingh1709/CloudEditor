@@ -1,0 +1,11 @@
+<div mat-dialog-title>Create new Document</div>
+<mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Name of document</mat-label>
+        <input matInput [(ngModel)]="docName">
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="false" mat-dialog-close>Cancel</button>
+    <button mat-button (click)="create()" cdkFocusInitial>Create</button>
+</mat-dialog-actions>

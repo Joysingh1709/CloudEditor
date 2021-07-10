@@ -1,0 +1,20 @@
+<app-nav [share]="true" [doc_Id]="id" [user_Id]="userID"></app-nav>
+<!-- <div class="share-doc">
+    <button (click)="openDialog()">Share Document</button>
+</div> -->
+
+<div class="editor-container" (keydown)="onkeypress($event)">
+    <form novalidate [formGroup]="quillForm">
+        <quill-editor formControlName="description" #quilleditor class="editor" (onContentChanged)="textchange($event)"
+            (onSelectionChanged)="textSelectionchange($event)" (onFocus)="onFocusChange($event)"
+            (onBlur)="onBlurChange($event)" (onEditorChanged)="onEditorChangedChange($event)"
+            (onEditorCreated)="onEditorCreatedChange($event)">
+        </quill-editor>
+    </form>
+</div>
+
+<igx-toast #toast>
+    <igx-circular-bar *ngIf="showLoader" [animate]="false" [indeterminate]="true" [textVisibility]="false">
+    </igx-circular-bar>
+    {{toastMessage}}
+</igx-toast>
